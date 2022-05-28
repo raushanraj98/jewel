@@ -1,4 +1,12 @@
-<%= form_with model: item do |form| %>
+<%= form_with model: item, html: { multipart: true } do |form| %>
+  <div>
+    <%= form.label :image %><br>
+    <%= form.file_field :image %>
+    <% item.errors.full_messages_for(:image).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  
   <div>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
