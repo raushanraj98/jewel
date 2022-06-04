@@ -1,13 +1,20 @@
+
+
 <h1>Items</h1>
 
-<ul>
-  <% @items.each do |item| %>
-    <li>
-      <%= link_to item.name, item %>
-      <%=image_tag item.image.url(:thumb)%>
-    </li>
+
+<div class="listing">
+<% @items.each do |item| %>
+<div class="card" style="width: 18rem;">
+  <%=image_tag item.image.url(:medium) , class:"card-img-top" %>
+  <div class="card-body">
+    <h5 class="card-title"><%= item.name%></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <%=link_to "View Item",item ,class:"btn btn-primary"%>
+  </div>
+</div>
   <% end %>
-</ul>
+  </div>
 
 <%= link_to "New Item", new_item_path %>
 
