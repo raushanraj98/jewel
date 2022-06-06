@@ -1,6 +1,9 @@
 
 
 <h1>Items</h1>
+<%= link_to "New Item", new_item_path %>
+
+<%=link_to "Logout", logout_path%>
 
 
 <div class="listing">
@@ -9,13 +12,11 @@
   <%=image_tag item.image.url(:medium) , class:"card-img-top" %>
   <div class="card-body">
     <h5 class="card-title"><%= item.name%></h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text"> <%= truncate(item.description,length:100)%> </p>
     <%=link_to "View Item",item ,class:"btn btn-primary"%>
+    <%=link_to "Add to Cart",item ,class:"btn btn-primary"%>
   </div>
 </div>
   <% end %>
   </div>
 
-<%= link_to "New Item", new_item_path %>
-
-<%=link_to "Logout", logout_path%>

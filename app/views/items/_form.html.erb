@@ -23,6 +23,14 @@
     <% end %>
   </div>
 
+   <div>
+    <%= form.label :Description %><br>
+    <%= form.text_area :description %><br>
+    <% item.errors.full_messages_for(:description).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
   <div>
     <%= form.submit %>
   </div>
