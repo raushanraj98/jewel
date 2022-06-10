@@ -1,8 +1,12 @@
 <h1><%= @item.name %></h1>
 <div class="details">
+<div>
     <%= image_tag @item.image.url(:large)%>
-    <p>Price: <%= @item.price %><br/>
-    Description: <%= @item.description %></p>
+    </div>
+    <div>
+    <p><strong>Price:</strong> <%= @item.price %></p>
+    <p><strong>Description:</strong> <%=simple_format( @item.description)%></p>
+    </div>
 </div>
 <ul>
     <li><%= link_to "Edit", edit_item_path(@item) %></li>

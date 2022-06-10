@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
    flash[:success] = 'Successfully Logged In!'
    redirect_to '/items'
   else
-   flash[:warning] = "Invalid email or password"
+   flash[:alert] = "Invalid email or password"
    redirect_to '/login'
   end
  end
