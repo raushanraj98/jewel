@@ -1,4 +1,12 @@
 
 <h1 class="text-center ">Edit Item</h1>
+<% if @item.errors.any? %> 
+  <h2>The following errors prevented the item from being saved</h2> 
+  <ul> 
+    <% @item.errors.full_messages.each do |msg| %> 
+      <li><%= msg %></li> 
+    <% end %> 
+  </ul>
+<% end %>
 <%= render "form", item: @item %>
 

@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :require_user, only: [:edit, :update, :destroy]
+  
   def index 
     @items = Item.all
   end
@@ -28,6 +30,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
 
     if @item.update(item_params)
+      flash[:success]="Item updated successfully"
       redirect_to @item
     else
       render :edit, status: :unprocessable_entity

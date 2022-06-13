@@ -1,7 +1,9 @@
 <h1>Jewelleries</h1>
+<%if logged_in?%>
 <%= link_to "New Item", new_item_path %>
 
 <%=link_to "Logout", logout_path%>
+<%end%>
 
 
 <div class="listing container mb-5">
