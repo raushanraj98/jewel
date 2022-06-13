@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :require_user, only: [:edit, :update, :destroy]
+  before_action :require_user, except: [:index]
   
   def index 
     @items = Item.all
