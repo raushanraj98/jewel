@@ -1,23 +1,23 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.listing{
+.listing {
   display: flex;
   flex-wrap: wrap;
-  gap:2rem;
+  gap: 2rem;
 }
-.details{
+.details {
   display: flex;
- gap:2rem;
+  gap: 2rem;
 }
-.bgColor{
-  background-color: #F8ECD1;
-  height:100vh;
+.bgColor {
+  background-color: #f8ecd1;
+  height: 100vh;
 }
 
-.color{
-  background-color: #AC7D88;
+.color {
+  background-color: #ac7d88;
 }
-#description{
-  height:15rem;
+#description {
+  height: 15rem;
 }

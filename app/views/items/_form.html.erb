@@ -1,8 +1,8 @@
 <div class="container color p-3 shadow rounded">
 <%= form_with model: item, html: { multipart: true } do |form| %>
   <div class="mb-3">
-    <%= form.label :image,class:"form-label" %>
-    <%= form.file_field :image,class:"form-control" %>
+    <%= form.label :image, class: "form-label" %>
+    <%= form.file_field :image, class: "form-control" %>
     <% item.errors.full_messages_for(:image).each do |message| %>
       <div><%= message %></div>
     <% end %>
@@ -10,8 +10,8 @@
   
   <div class="form-floating mb-3 shadow rounded">
     
-    <%= form.text_field :name,class:"form-control",placeholder:"name"%>
-    <%= form.label :name%>
+    <%= form.text_field :name, class: "form-control", placeholder: "name" %>
+    <%= form.label :name %>
     <% item.errors.full_messages_for(:name).each do |message| %>
       <div><%= message %></div>
     <% end %>
@@ -19,7 +19,7 @@
 
   <div class="form-floating mb-3 shadow rounded">
     
-    <%= form.text_field :price,class:"form-control",placeholder:"price" %>
+    <%= form.text_field :price, class: "form-control", placeholder: "price" %>
     <%= form.label :price %>
     <% item.errors.full_messages_for(:price).each do |message| %>
       <div><%= message %></div>
@@ -27,7 +27,7 @@
   </div>
 
    <div class="form-floating mb-3 shadow rounded">
-    <%= form.text_area :description,class:"form-control",placeholder:"description",id:"description" %>
+    <%= form.text_area :description, class: "form-control", placeholder: "description", id: "description" %>
     <%= form.label :Description %>
     <% item.errors.full_messages_for(:description).each do |message| %>
       <div><%= message %></div>
@@ -35,10 +35,10 @@
   </div>
 
   <div class="row justify-content-center mb-4">
-    <%= form.submit class:"btn btn-outline-light col-4 " %>
+    <%= form.submit class: "btn btn-outline-light col-4 " %>
   </div>
 
-  <%= link_to "[ Cancel and Go back to Items page ]", items_path,class:"text-center",class:"row justify-content-center" %>
+  <%= link_to "[ Cancel and Go back to Items page ]", items_path, class: "text-center", class: "row justify-content-center" %>
 
 <% end %>
 </div>
