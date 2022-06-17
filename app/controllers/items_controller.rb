@@ -13,13 +13,15 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @categories = Category.all
   end
 
   def create
     @item = Item.new(item_params)
-    @item.category = Category.first
+    @item.category = Category.find(params[:item][:category_id])
 
     if @item.save
+      flash[:success] = "Item created successfully"
       redirect_to @item
     else
       render :new, status: :unprocessable_entity
@@ -28,6 +30,7 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @categories = Category.all
   end
 
   def update
@@ -50,6 +53,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :image, :description)
+    params.require(:item).permit(:name, :price, :image, :description, :category_id)
   end
 end

@@ -1,0 +1,18 @@
+<div class="container color p-3 shadow rounded">
+<%= form_for @category do |form| %>
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control", palceholder: "name" %>
+    <% category.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="row justify-content-center mb-4">
+    <%= form.submit class: "btn btn-outline-light col-4 " %>
+  </div>
+
+  <%= link_to "[ Cancel and Go back to category page ]", categories_path, class: "text-center", class: "row justify-content-center" %>
+
+<% end %>
+</div>

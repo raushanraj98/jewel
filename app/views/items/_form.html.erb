@@ -33,8 +33,13 @@
       <div><%= message %></div>
     <% end %>
   </div>
+  <p>Choose a category</p>
+  <% categories.each do |category| %>
+    <%= form.radio_button :category_id, category.id %>
+    <%= form.label :category, category.name %>
+  <% end %>
 
-  <div class="row justify-content-center mb-4">
+  <div class="row justify-content-center my-4">
     <%= form.submit class: "btn btn-outline-light col-4 " %>
   </div>
 
