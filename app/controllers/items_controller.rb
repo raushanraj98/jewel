@@ -18,6 +18,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @categories = Category.all
     @item.category = Category.find(params[:item][:category_id])
 
     if @item.save
@@ -35,6 +36,7 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
+    @categories = Category.all
     if @item.update(item_params)
       flash[:success] = "Item updated successfully"
       redirect_to @item
