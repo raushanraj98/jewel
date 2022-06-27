@@ -1,18 +1,24 @@
 <h1><%= @item.name %></h1>
+<div class="share m-2 d-flex justify-content-end">
+<span class="facebook"><img src="https://img.icons8.com/fluency/48/000000/facebook.png"/></span>
+<span class="instagram"><img src="https://img.icons8.com/fluency/48/000000/instagram-new.png"/></span>
+<span class="pinterest"><img src="https://img.icons8.com/fluency/48/000000/pinterest.png"/></span>
+</div>
 <div class="details">
 <div>
-    <%= image_tag @item.image.url(:large)%>
+    <%= image_tag @item.image.url(:large) %>
     </div>
     <div>
     <p><strong>Price:</strong> <%= @item.price %></p>
-    <p><strong>Description:</strong> <%=simple_format( @item.description)%></p>
+    <p><strong>Description:</strong> <%= simple_format(@item.description) %></p>
     </div>
 </div>
 <ul>
-<%if current_user.admin?%>
+<% if current_user.admin? %>
     <li><%= link_to "Edit", edit_item_path(@item) %></li>
-    <li><%= button_to 'Delete', item_path(@item), method: :delete %></li>
-    <%end%>
+    <li><%= button_to "Delete", item_path(@item), method: :delete %></li>
+    <% end %>
 </ul>
 
-<%=link_to "Back" , "/items" %>
+<%= link_to "Back", "/items" %>
+<%= javascript_pack_tag 'index' %>
